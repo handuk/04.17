@@ -1,0 +1,144 @@
+import java.util.*;
+
+class  home1
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+
+		int a;
+
+		System.out.print("정수입력");
+		a = sc.nextInt();
+
+		if(a%2==0)
+			System.out.printf("%d 는 짝수",a);
+		else
+			System.out.printf("%d 는 홀수",a);
+	}
+}
+
+-------------
+
+import java.util.*;
+
+class  home2
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+
+		int a,b;
+		System.out.print("숫자1 숫자2 입력");
+
+		a = sc.nextInt();
+		b = sc.nextInt();
+
+		if(a>b)
+			System.out.printf("큰숫자 %d 작은숫자 %d",a,b);
+		else
+			System.out.printf("큰숫자 %d 작은숫자 %d",b,a);
+	}
+}
+
+
+---------------
+
+import java.util.*;
+
+class home3 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+
+		int a;
+		String str;
+		System.out.print("년도를 입력해주세요 ex)xxxx : ");
+		a = sc.nextInt();
+
+
+
+
+		str = a%4==0 && a%100!=0 || a%400==0?"윤년":"평년";//윤년구하는공식
+
+		System.out.printf("%d 년도는 %s 입니다",a ,str);
+
+	}
+}
+
+------------------
+
+import java.util.*;
+
+class home4 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+
+		int cnt,tot,a = 15800;
+		double hal=0;
+		System.out.print("구매희망 수량을 적어주세요 : ");
+
+		cnt = sc.nextInt();
+
+		if(cnt >= 30){
+			tot = cnt*a;
+			hal = tot-(tot*0.2);
+		}
+		else if(cnt<30 && cnt>=20){
+			tot = cnt*a;
+			hal = tot-(tot*0.15);
+		}
+		else if(cnt<20 && cnt>=10){
+			tot = cnt*a;
+			hal = tot-(tot*0.1);
+		}
+		else
+			tot = cnt*a;
+
+		System.out.printf("구매수량 %d개 토탈%d 할인가%.0f원 입니다.",cnt,tot,hal);
+
+
+	}
+}
+
+-------------------------
+
+import java.util.*;
+
+class home5 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc = new Scanner(System.in);
+
+		String name,str="";
+		int kor,eng,mat;
+		double avg;
+
+		System.out.print("이름 국어 영어 수학 성적순으로 기입해주세요 : ");
+		name = sc.next();
+		kor = sc.nextInt();
+		eng = sc.nextInt();
+		mat = sc.nextInt();
+
+		avg = (kor+eng+mat)/3;
+
+		if(kor >= 40 && eng >= 40 && mat >= 40 && avg >= 60)
+			str = "합격";
+		else if (kor < 40 || eng <40 || mat <40 && avg >= 60)
+			str = "과락";
+		else if (avg < 60)
+		{	str = "불합격";		}
+
+		System.out.printf("이름 : %s \n 국어 %d 영어 %d 수학 %d \n 총점 : %d 평균 : %.1f 판정 : %s \n",name,kor,eng,mat,(kor+eng+mat),avg,str);
+		
+
+
+	}
+}
+
+
+-----------------------------------
